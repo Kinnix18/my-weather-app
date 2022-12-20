@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #c7e5ba;
+  border-radius: 8px;
+}
+ul {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.city-name {
+  font-size: 25px;
+}
 h1 {
   text-align: center;
 }
