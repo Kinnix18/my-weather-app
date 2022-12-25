@@ -24,15 +24,22 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <ul>
-            <li>
-              <span class="city-name"></span>,
-              <span class="country-name"></span>
-            </li>
-            <li class="day-time">Monday, 20:00</li>
-            <li>Wind: <span class="wind-speed">4</span> km/h</li>
-            <li class="weather-description">Clouds</li>
-          </ul>
+          <div class="row">
+            <div class="col-9">
+              <ul>
+                <li>
+                  <span class="city-name"></span>,
+                  <span class="country-name"></span>
+                </li>
+                <li class="day-time"></li>
+                <li>Wind: <span class="wind-speed"></span> km/h</li>
+                <li class="weather-description"></li>
+              </ul>
+            </div>
+            <div class="col-3">
+              <img src="" alt="" id="icon" />
+            </div>
+          </div>
           <h1>
             <strong id="temperature"></strong><span class="units">°C/°F</span>
           </h1>

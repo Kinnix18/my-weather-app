@@ -28,12 +28,15 @@ function showTemperature(response) {
   let windSpeedElement = document.querySelector(".wind-speed");
   let descriptionElement = document.querySelector(".weather-description");
   let dateElement = document.querySelector(".day-time");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.condition.description;
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
 let apiKey = "ff4e01btd323751oc4afa5a4c3e73777";
