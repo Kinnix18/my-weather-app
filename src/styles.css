@@ -34,3 +34,11 @@ h1 strong {
   position: relative;
   top: -38px;
 }
+.units .active {
+  cursor: default;
+  color: black;
+  text-decoration: none;
+}
+
+.units .active:hover {
+}

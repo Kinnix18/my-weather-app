@@ -29,6 +29,9 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector(".weather-description");
   let dateElement = document.querySelector(".day-time");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.temperature.current;
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
@@ -51,5 +54,30 @@ function handleSubmit(event) {
   searchCity(cityInputElement.value);
 }
 
+function showFahrenheitUnits(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  celsiusUnits.classList.remove("active");
+  fahrenheitUnits.classList.add("active");
+  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsiusUnits(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusUnits.classList.add("active");
+  fahrenheitUnits.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitUnits = document.querySelector("#fahrenheit-units");
+fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
+
+let celsiusUnits = document.querySelector("#celsius-units");
+celsiusUnits.addEventListener("click", showCelsiusUnits);
