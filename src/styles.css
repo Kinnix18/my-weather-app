@@ -3,6 +3,7 @@
   max-width: 600px;
   margin: 30px auto;
   font-family: "Open Sans", sans-serif;
+  color: #3c474a;
 }
 .weather-app {
   background-color: #e5f3e0;
@@ -36,9 +37,21 @@ h1 strong {
 }
 .units .active {
   cursor: default;
-  color: black;
+  color: #3c474a;
   text-decoration: none;
 }
 
-.units .active:hover {
+.weather-forecast {
+  text-align: center;
+  margin-top: 30px;
+}
+.forecast-day {
+  font-size: 14px;
+}
+.forecast-temperature {
+  font-size: 12px;
+}
+
+.forecast-temperature-min {
+  opacity: 0.5;
 }
