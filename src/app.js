@@ -20,6 +20,33 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
 }
+
+function showForecast() {
+  let forecastElement = document.querySelector(".forecast");
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+        <div class="forecast-day">${day}</div>
+        <img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+          width="40"
+        />
+        <br />
+        <div class="forecast-temperature">
+          <span class="forecast-temperature-max">12°</span>
+          <span class="forecast-temperature-min">10°</span>
+        </div></div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector(".city-name");
@@ -80,3 +107,5 @@ fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
 
 let celsiusUnits = document.querySelector("#celsius-units");
 celsiusUnits.addEventListener("click", showCelsiusUnits);
+
+showForecast();
