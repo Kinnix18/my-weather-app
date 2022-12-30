@@ -131,3 +131,5 @@ fahrenheitUnits.addEventListener("click", showFahrenheitUnits);
 
 let celsiusUnits = document.querySelector("#celsius-units");
 celsiusUnits.addEventListener("click", showCelsiusUnits);
+
+searchCity("Kovel");
